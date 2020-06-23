@@ -4,19 +4,19 @@
 import { processColor } from "react-native";
 import Animated, { round, color, interpolate, Extrapolate } from "react-native-reanimated";
 
-function red(c) {
+function red(c): number {
   // eslint-disable-next-line no-bitwise
   return (c >> 16) & 255;
 }
-function green(c) {
+function green(c): number {
   // eslint-disable-next-line no-bitwise
   return (c >> 8) & 255;
 }
-function blue(c) {
+function blue(c): number {
   // eslint-disable-next-line no-bitwise
   return c & 255;
 }
-function opacity(c) {
+function opacity(c): number {
   // eslint-disable-next-line no-bitwise
   return ((c >> 24) & 255) / 255;
 }
@@ -32,7 +32,7 @@ function opacity(c) {
  *
  * So, for now you can just use this helper instead.
  */
-export default function interpolateColors(animationValue, options) {
+export default function interpolateColors(animationValue, options): Animated.Node<number> {
   const { inputRange, outputColorRange } = options;
   const colors = outputColorRange.map(processColor);
 

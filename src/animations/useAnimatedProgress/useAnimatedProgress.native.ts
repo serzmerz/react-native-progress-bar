@@ -3,7 +3,7 @@ import Animated, { Easing } from "react-native-reanimated";
 
 const { Value, timing } = Animated;
 
-export default function useAnimatedProgress(width, percent) {
+export default function useAnimatedProgress(width: number, percent: number): Animated.Node<number> {
   const [translateX] = useState(new Value(0));
 
   useEffect(() => {

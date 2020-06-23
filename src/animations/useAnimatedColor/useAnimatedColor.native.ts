@@ -7,7 +7,7 @@ const { set, useCode } = Animated;
 
 const inputRange = [0, 50];
 
-export default function useAnimatedColor(color) {
+export default function useAnimatedColor(color: string): Animated.Node<number> {
   const colorValue = useRef(new Animated.Value(0));
   const prevColor = useRef(color);
 

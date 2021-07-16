@@ -1,13 +1,12 @@
 import { useMemo, useRef } from "react";
-import Animated, { Clock } from "react-native-reanimated";
-import interpolateColors from "../interpolateColors";
+import Animated, { Clock, interpolateColors } from 'react-native-reanimated'
 import { runTiming } from "../utils";
 
 const { set, useCode } = Animated;
 
 const inputRange = [0, 50];
 
-export default function useAnimatedColor(color: string): Animated.Node<number> {
+export default function useAnimatedColor(color: string): Animated.Node<number | string> {
   const colorValue = useRef(new Animated.Value(0));
   const prevColor = useRef(color);
 

@@ -11,9 +11,10 @@ interface Props {
   current: number;
   total: number;
   style?: StyleProp<ViewStyle>;
+  progressStyle?: StyleProp<ViewStyle>;
 }
 
-const AnimatedProgress: FC<Props> = ({ fill, current, total, style }) => {
+const AnimatedProgress: FC<Props> = ({ fill, current, total, style, progressStyle }) => {
   const percent = current / total
   const [{ width }, onLayout] = useOnLayout()
 
@@ -22,7 +23,7 @@ const AnimatedProgress: FC<Props> = ({ fill, current, total, style }) => {
 
   return (
     <View style={[styles.container, style]} onLayout={onLayout}>
-      <Animated.View style={[styles.progress, { backgroundColor, transform: [{ translateX }] }]} />
+      <Animated.View style={[styles.progress, { backgroundColor, transform: [{ translateX }] }, progressStyle]} />
     </View>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Animated, { Easing } from "react-native-reanimated";
+import Animated, { EasingNode } from "react-native-reanimated";
 
 const { Value, timing } = Animated;
 
@@ -10,7 +10,7 @@ export default function useAnimatedProgress(width: number, percent: number): Ani
     timing(translateX, {
       toValue: width * percent,
       duration: 200,
-      easing: Easing.inOut(Easing.ease)
+      easing: EasingNode.inOut(EasingNode.ease)
     }).start();
   }, [percent, width]);
 

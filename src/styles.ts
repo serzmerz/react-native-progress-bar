@@ -10,7 +10,7 @@ export default StyleSheet.create({
     overflow: "hidden"
   },
   progress: {
-    height: 4,
+    height: "100%",
     borderRadius: 2,
     position: "absolute",
     width: "100%",
